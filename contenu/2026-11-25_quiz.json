@@ -1,0 +1,123 @@
+{
+ "type": "quiz",
+ "date": "2026-11-25",
+ "jour": 3,
+ "questions": [
+  {
+   "level": "FACILE",
+   "q": "Quelle planète est surnommée la planète rouge ?",
+   "opts": [
+    "Vénus",
+    "Mars",
+    "Jupiter"
+   ],
+   "ans": 1,
+   "tts_ans": "Mars !"
+  },
+  {
+   "level": "FACILE",
+   "q": "Combien de côtés a un hexagone ?",
+   "opts": [
+    "5",
+    "8",
+    "6"
+   ],
+   "ans": 2,
+   "tts_ans": "six côtés !"
+  },
+  {
+   "level": "FACILE",
+   "q": "Quel est le plus grand océan du monde ?",
+   "opts": [
+    "Pacifique",
+    "Atlantique",
+    "Indien"
+   ],
+   "ans": 0,
+   "tts_ans": "l'océan Pacifique !"
+  },
+  {
+   "level": "MOYEN",
+   "q": "Qui a peint La Joconde ?",
+   "opts": [
+    "Michel-Ange",
+    "Léonard de Vinci",
+    "Raphaël"
+   ],
+   "ans": 1,
+   "tts_ans": "Léonard de Vinci !"
+  },
+  {
+   "level": "MOYEN",
+   "q": "En quelle année le mur de Berlin est-il tombé ?",
+   "opts": [
+    "1991",
+    "1987",
+    "1989"
+   ],
+   "ans": 2,
+   "tts_ans": "1989 !"
+  },
+  {
+   "level": "MOYEN",
+   "q": "Quel est l'os le plus long du corps humain ?",
+   "opts": [
+    "Fémur",
+    "Tibia",
+    "Humérus"
+   ],
+   "ans": 0,
+   "tts_ans": "le fémur !"
+  },
+  {
+   "level": "DIFFICILE",
+   "q": "Quelle est la capitale de l'Australie ?",
+   "opts": [
+    "Sydney",
+    "Canberra",
+    "Melbourne"
+   ],
+   "ans": 1,
+   "tts_ans": "Canberra ! Et non, pas Sydney.",
+   "fact": "Et non, ce n'est pas Sydney !"
+  },
+  {
+   "level": "DIFFICILE",
+   "q": "Quel est le symbole chimique de l'or ?",
+   "opts": [
+    "Ag",
+    "Fe",
+    "Au"
+   ],
+   "ans": 2,
+   "tts_ans": "a, u ! Du latin aurum.",
+   "fact": "Du latin « aurum »"
+  },
+  {
+   "level": "EXPERT",
+   "q": "Combien de cœurs possède une pieuvre ?",
+   "opts": [
+    "1",
+    "3",
+    "2"
+   ],
+   "ans": 1,
+   "tts_ans": "trois cœurs !",
+   "fact": "Et son sang est bleu !"
+  },
+  {
+   "level": "EXPERT",
+   "q": "Quel pays a le plus de fuseaux horaires ?",
+   "opts": [
+    "Russie",
+    "États-Unis",
+    "France"
+   ],
+   "ans": 2,
+   "tts_ans": "la France, grâce à l'outre-mer !",
+   "fact": "12 fuseaux grâce à l'outre-mer"
+  }
+ ],
+ "demain": "histoire",
+ "legende": "Tu fais combien sur 10 ? 🧠 Dis ton score en commentaire 👇 #quiz #culturegenerale #quizz #apprendresurtiktok #culture #testtesconnaissances #fyp"
+}

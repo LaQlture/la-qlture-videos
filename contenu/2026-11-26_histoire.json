@@ -1,0 +1,65 @@
+{
+ "type": "histoire",
+ "date": "2026-11-26",
+ "jour": 4,
+ "titre": "La tour Eiffel devait être détruite",
+ "demain": "quiz",
+ "segments": [
+  {
+   "texte": "Tu savais que la tour Eiffel devait être détruite ?",
+   "carte": "Elle devait être DÉTRUITE"
+  },
+  {
+   "texte": "On est en 1889. Paris accueille l'Exposition universelle, pour les cent ans de la Révolution française.",
+   "carte": "1889"
+  },
+  {
+   "texte": "Gustave Eiffel y présente une tour de fer de trois cents mètres. C'est alors la plus haute construction du monde.",
+   "carte": "300 mètres"
+  },
+  {
+   "texte": "Mais beaucoup d'artistes la détestent. En 1887, ils signent même une pétition contre cette tour « inutile et monstrueuse ».",
+   "tts": "Mais beaucoup d'artistes la détestent. En 1887, ils signent même une pétition contre cette tour, inutile et monstrueuse.",
+   "carte": "Inutile et monstrueuse ?"
+  },
+  {
+   "texte": "L'écrivain Guy de Maupassant, lui, la traite de squelette disgracieux.",
+   "carte": "Maupassant"
+  },
+  {
+   "texte": "Et surtout, le contrat d'Eiffel ne dure que vingt ans. Fin 1909, la tour doit être démontée.",
+   "carte": "20 ans"
+  },
+  {
+   "texte": "Alors Eiffel a une idée de génie : rendre sa tour indispensable à la science.",
+   "carte": "Science"
+  },
+  {
+   "texte": "Il y mène des expériences de météo, d'aérodynamique… et surtout de radio.",
+   "carte": "Expériences"
+  },
+  {
+   "texte": "En 1903, il propose au capitaine Ferrié, de l'armée, d'utiliser le sommet comme antenne de télégraphie sans fil.",
+   "carte": "Antenne"
+  },
+  {
+   "texte": "Ça marche : les ondes portent jusqu'à six mille kilomètres. La tour devient stratégique pour l'armée.",
+   "tts": "Ça marche : les ondes portent jusqu'à six mille kilomètres. La tour devient stratégique pour l'armée.",
+   "carte": "6 000 km"
+  },
+  {
+   "texte": "Résultat : le 1er janvier 1910, la concession d'Eiffel est prolongée… de soixante-dix ans !",
+   "tts": "Résultat : le premier janvier 1910, la concession d'Eiffel est prolongée… de soixante-dix ans !",
+   "carte": "+70 ans"
+  },
+  {
+   "texte": "Et pendant la Première Guerre mondiale, son antenne intercepte même des messages ennemis.",
+   "carte": "1914-1918"
+  },
+  {
+   "texte": "Aujourd'hui, c'est l'un des monuments les plus célèbres du monde. Et tout ça… grâce à la radio !",
+   "carte": "Merci la radio"
+  }
+ ],
+ "legende": "La tour Eiffel devait être démontée en 1909… et c'est la radio qui l'a sauvée 📻 Tu connaissais cette histoire ? #culturegenerale #histoire #toureiffel #paris #lesavaistu #apprendresurtiktok #fyp"
+}
