@@ -1,7 +1,7 @@
 # Production quotidienne — la.qlture (TikTok)
 
 Ce fichier est le mode d'emploi suivi chaque jour par la tâche programmée.
-Objectif : fabriquer la vidéo **du jour** et la programmer sur TikTok via Buffer pour **18 h 00 (heure de Paris)**.
+Objectif : fabriquer la vidéo **du jour** et la programmer sur TikTok via Buffer pour **12 h 00 (midi, heure de Paris)**.
 
 ## 1. Quel type de vidéo aujourd'hui ?
 
@@ -84,13 +84,13 @@ répond 200 (`curl -sIL`).
 ## 5. Programmer sur Buffer
 - `get_account` → organisation « My organization » + heure actuelle (pour le décalage horaire : +01:00 l'hiver, +02:00 l'été).
 - `list_channels` → chaîne TikTok **la.qlture**.
-- `create_post` : `channelId` TikTok, `mode: customScheduled`, `dueAt: <date>T18:00:00+01:00` (ou +02:00),
+- `create_post` : `channelId` TikTok, `mode: customScheduled`, `dueAt: <date>T12:00:00+01:00` (ou +02:00),
   `schedulingType: automatic`, `text` = `legende`, `assets: [{video: {url: <lien raw>}}]`,
   `metadata: {tiktok: {isAiGenerated: true}}` (case « contenu généré par IA » **cochée** depuis le 27/11 :
   la voix est une IA, et les vidéos publiées avec la case décochée faisaient 0 vue).
 - Si une chaîne **YouTube** est connectée : même vidéo en `metadata.youtube` `{type: "short", title: <titre ≤ 90 car. + #shorts>,
   categoryId: "27", madeForKids: false}`.
-- Si 18 h est déjà passé : programmer le lendemain 18 h et le signaler.
+- Si midi est déjà passé : programmer le lendemain 12 h 00 et le signaler.
 
 ## 6. En cas de problème
 Ne jamais programmer une vidéo défectueuse ou un contenu non vérifié. Si une étape échoue après une nouvelle tentative,

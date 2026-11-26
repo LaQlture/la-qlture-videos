@@ -1,6 +1,6 @@
 # la.qlture — vidéos TikTok
 
-Vidéos de culture générale publiées chaque jour à 18 h, en alternance **quiz** / **histoire**.
+Vidéos de culture générale publiées chaque jour à 12 h (midi), en alternance **quiz** / **histoire**.
 
 - `videos/` : les vidéos finales (lues par Buffer via leur lien public)
 - `contenu/` : le texte de chaque vidéo (JSON)
