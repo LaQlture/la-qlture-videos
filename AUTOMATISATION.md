@@ -86,7 +86,8 @@ répond 200 (`curl -sIL`).
 - `list_channels` → chaîne TikTok **la.qlture**.
 - `create_post` : `channelId` TikTok, `mode: customScheduled`, `dueAt: <date>T18:00:00+01:00` (ou +02:00),
   `schedulingType: automatic`, `text` = `legende`, `assets: [{video: {url: <lien raw>}}]`,
-  `metadata: {tiktok: {isAiGenerated: false}}`.
+  `metadata: {tiktok: {isAiGenerated: true}}` (case « contenu généré par IA » **cochée** depuis le 27/11 :
+  la voix est une IA, et les vidéos publiées avec la case décochée faisaient 0 vue).
 - Si une chaîne **YouTube** est connectée : même vidéo en `metadata.youtube` `{type: "short", title: <titre ≤ 90 car. + #shorts>,
   categoryId: "27", madeForKids: false}`.
 - Si 18 h est déjà passé : programmer le lendemain 18 h et le signaler.
