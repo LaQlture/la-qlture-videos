@@ -1,0 +1,122 @@
+{
+ "type": "quiz",
+ "date": "2026-11-27",
+ "demain": "histoire",
+ "questions": [
+  {
+   "level": "FACILE",
+   "q": "Combien de pattes a une araignée ?",
+   "opts": [
+    "6",
+    "8",
+    "10"
+   ],
+   "ans": 1,
+   "tts_ans": "huit pattes !"
+  },
+  {
+   "level": "FACILE",
+   "q": "Quel est le plus long fleuve de France ?",
+   "opts": [
+    "La Seine",
+    "Le Rhône",
+    "La Loire"
+   ],
+   "ans": 2,
+   "tts_ans": "la Loire !"
+  },
+  {
+   "level": "FACILE",
+   "q": "Combien de joueurs par équipe sur un terrain de foot ?",
+   "opts": [
+    "11",
+    "9",
+    "12"
+   ],
+   "ans": 0,
+   "tts_ans": "onze joueurs !"
+  },
+  {
+   "level": "MOYEN",
+   "q": "Qui a écrit Les Misérables ?",
+   "opts": [
+    "Émile Zola",
+    "Victor Hugo",
+    "Balzac"
+   ],
+   "ans": 1,
+   "tts_ans": "Victor Hugo !"
+  },
+  {
+   "level": "MOYEN",
+   "q": "Quelle est la capitale du Canada ?",
+   "opts": [
+    "Toronto",
+    "Montréal",
+    "Ottawa"
+   ],
+   "ans": 2,
+   "tts_ans": "Ottawa ! Et non, pas Montréal."
+  },
+  {
+   "level": "MOYEN",
+   "q": "Quel est le plus grand animal du monde ?",
+   "opts": [
+    "Baleine bleue",
+    "Éléphant",
+    "Requin-baleine"
+   ],
+   "ans": 0,
+   "tts_ans": "la baleine bleue !"
+  },
+  {
+   "level": "DIFFICILE",
+   "q": "En quelle année Colomb a-t-il atteint l'Amérique ?",
+   "opts": [
+    "1515",
+    "1492",
+    "1498"
+   ],
+   "ans": 1,
+   "tts_ans": "1492 ! Il pensait être arrivé aux Indes.",
+   "fact": "Il pensait être aux Indes !"
+  },
+  {
+   "level": "DIFFICILE",
+   "q": "Quel métal est le plus abondant dans l'écorce terrestre ?",
+   "opts": [
+    "Fer",
+    "Cuivre",
+    "Aluminium"
+   ],
+   "ans": 2,
+   "tts_ans": "l'aluminium !",
+   "fact": "Environ 8 % de l'écorce"
+  },
+  {
+   "level": "EXPERT",
+   "q": "Combien d'os compte le squelette d'un adulte ?",
+   "opts": [
+    "206",
+    "186",
+    "226"
+   ],
+   "ans": 0,
+   "tts_ans": "deux cent six os !",
+   "fact": "Un bébé en a environ 300 !"
+  },
+  {
+   "level": "EXPERT",
+   "q": "Combien de temps met la lumière du Soleil à nous atteindre ?",
+   "opts": [
+    "8 secondes",
+    "8 minutes",
+    "8 heures"
+   ],
+   "ans": 1,
+   "tts_ans": "environ huit minutes !",
+   "fact": "En moyenne 8 min 20 s"
+  }
+ ],
+ "legende": "Tu fais combien sur 10 ? 🧠 Dis ton score en commentaire 👇 #quiz #culturegenerale #quizz #apprendresurtiktok #culture #testtesconnaissances #fyp"
+}
