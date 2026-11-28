@@ -34,7 +34,7 @@ def ease_back(x):
 
 _dummy = ImageDraw.Draw(Image.new("RGB", (10, 10)))
 def wrap(text, f, maxw):
-    words, lines, cur = text.split(), [], ""
+    words, lines, cur = text.split(" "), [], ""   # l'espace insécable reste collé (« française ! »)
     for w in words:
         t = (cur + " " + w).strip()
         if _dummy.textlength(t, font=f) <= maxw: cur = t
@@ -175,6 +175,8 @@ def tts_close():
 
 def say(text, path, speed=1.1, sid=30):
     """Synthétise `text` en français, coupe les silences, écrit un wav 44.1 kHz mono. Retourne la durée."""
+    if os.environ.get("LAQLTURE_REUSE") and os.path.exists(path):   # relance : on garde la voix déjà générée
+        return round(duration(path), 3)
     for a, b in FIX: text = re.sub(a, b, text, flags=re.I)
     raw = path[:-4] + ".raw.wav"
     if VOICE == "tom": _raw_tom(text, raw)

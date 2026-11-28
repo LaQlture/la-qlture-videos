@@ -3,6 +3,7 @@ import math, os, re
 from PIL import Image, ImageDraw, ImageFilter, ImageOps
 from common import *
 from common import _dummy
+import captions
 
 CX = W // 2 - 30           # centre décalé à gauche (icônes TikTok à droite)
 CARD_Y, CARD_W, CARD_H = 470, 880, 470
@@ -38,11 +39,15 @@ class Story:
             s["dur"] = say(s.get("tts", s["texte"]), os.path.join(self.work, f"s{k}.wav"))
             s["t0"] = t; s["start"] = t - (0.3 if k == 0 else 0.15)
             t += s["dur"] + (0.32 if not s.get("outro") else 0)
-            # sous-titres : morceaux répartis au prorata du nombre de caractères
-            cs = chunks(s["texte"]); w = [len(x) + 2 for x in cs]; tot = sum(w); acc = s["t0"]
-            s["caps"] = []
-            for x, ww in zip(cs, w):
-                s["caps"].append((acc, x)); acc += s["dur"] * ww / tot
+        # sous-titres : groupes de mots naturels, calés sur le début réel de chaque groupe dans la voix
+        f = font(78, "Black")
+        fits = lambda x: len(x) <= captions.MAX_CH and len(wrap(x, f, 840)) <= 2
+        words = captions.align([(os.path.join(self.work, f"s{k}.wav"), s.get("tts", s["texte"])) for k, s in enumerate(self.segs)])
+        print("sous-titres calés sur la voix" if words else "sous-titres au prorata (calage indisponible)", flush=True)
+        for k, s in enumerate(self.segs):
+            cs = captions.chunk_text(s["texte"], fits)
+            ts = captions.caption_times(cs, s["t0"], s["dur"], words[k] if words else None)
+            s["caps"] = list(zip(ts, cs))
         self.total = round((t + 1.4) * FPS) / FPS
         for k, s in enumerate(self.segs):
             s["end"] = self.segs[k + 1]["start"] if k + 1 < len(self.segs) else self.total
@@ -152,6 +157,7 @@ class Story:
             cur = s["caps"][0]
         st, x = cur; p = 1.0 if t < 0.3 else (t - st) / 0.12
         f = font(78, "Black"); lines = wrap(x, f, 840)
+        if len(lines) == 2: lines = captions.balance(x, f, 840, _dummy.textlength) or lines
         bw = int(max(_dummy.textlength(l, font=f) for l in lines) + 70); bh = int(len(lines) * 94 + 40)
         box, bp = rr_image(bw, bh, 28, (10, 10, 30, 200))
         bd = ImageDraw.Draw(box)
@@ -183,7 +189,7 @@ class Story:
         if mid <= t < mid + 3.2 and not s.get("outro"):
             lp = (t - mid) / 0.35; out = max(0, (t - mid - 2.8) / 0.4)
             btn, bp = cta_button("+ Abonne-toi pour la suite", 620, 84, 38)
-            paste(im, btn, CX - 310 - bp, (1530 if s.get("image") else 1360) - bp, alpha=min(1, lp * 2) * (1 - out), scale=0.85 + 0.15 * ease_back(lp))
+            paste(im, btn, CX - 310 - bp, (PH_Y + 40 if s.get("image") else 1360) - bp, alpha=min(1, lp * 2) * (1 - out), scale=0.85 + 0.15 * ease_back(lp))
         return im
 
     def frame_fn(self, name):
