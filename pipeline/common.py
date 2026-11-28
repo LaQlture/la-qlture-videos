@@ -134,19 +134,56 @@ def _kokoro():
                     sess=ort.InferenceSession(os.path.join(KOKORO_DIR, "model.onnx"), providers=["CPUExecutionProvider"]))
     return _tts
 
-def say(text, path, speed=1.1, sid=30):
-    """Synthétise `text` en français, coupe les silences, écrit un wav 44.1 kHz mono. Retourne la durée."""
+VOICE = os.environ.get("LAQLTURE_VOICE", "kokoro")   # kokoro (défaut) | tom | chatterbox
+PIPER_DIR = os.path.expanduser("~/.cache/laqlture/piper")
+_cb = {}
+
+def _raw_kokoro(text, raw, speed=1.1, sid=30):
     k = _kokoro()
-    for a, b in FIX: text = re.sub(a, b, text, flags=re.I)
     ps = " ".join("".join(s) for s in k["ph"].phonemize("fr", text)).replace("-", "")
     ids = [k["tok"][c] for c in ps if c in k["tok"]][:508]
     audio = k["sess"].run(None, {"tokens": np.array([[0] + ids + [0]], dtype=np.int64), "style": k["voices"][sid, len(ids)],
                                  "speed": np.array([speed], dtype=np.float32)})[0].squeeze()
-    raw = path[:-4] + ".raw.wav"
     import soundfile as sf
     sf.write(raw, audio, 24000)
+
+def _raw_tom(text, raw):
+    """Voix masculine Piper fr_FR-tom-medium."""
+    if "tom" not in _tts:
+        from piper import PiperVoice
+        _tts["tom"] = PiperVoice.load(os.path.join(PIPER_DIR, "fr_FR-tom-medium.onnx"))
+    from piper.config import SynthesisConfig
+    import wave
+    with wave.open(raw, "wb") as wf:
+        _tts["tom"].synthesize_wav(text, wf, syn_config=SynthesisConfig(length_scale=0.92))
+
+def _raw_chatterbox(text, raw):
+    """Chatterbox Multilingual (MIT) via un worker dans son propre environnement Python."""
+    import json as _j
+    if "p" not in _cb:
+        py = os.path.expanduser(os.environ.get("CB_PYTHON", "~/.venvs/cb/bin/python"))
+        _cb["p"] = subprocess.Popen([py, os.path.join(HERE, "tts_chatterbox.py")], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
+                                    stderr=subprocess.DEVNULL, text=True)
+        assert _j.loads(_cb["p"].stdout.readline()).get("ready")
+    _cb["p"].stdin.write(_j.dumps({"text": text, "path": raw}) + "\n"); _cb["p"].stdin.flush()
+    assert _j.loads(_cb["p"].stdout.readline()).get("ok")
+
+def tts_close():
+    """Arrête le worker Chatterbox (libère ~3 Go de mémoire avant le rendu des images)."""
+    if "p" in _cb:
+        _cb["p"].stdin.close(); _cb["p"].wait(timeout=60); del _cb["p"]
+
+def say(text, path, speed=1.1, sid=30):
+    """Synthétise `text` en français, coupe les silences, écrit un wav 44.1 kHz mono. Retourne la durée."""
+    for a, b in FIX: text = re.sub(a, b, text, flags=re.I)
+    raw = path[:-4] + ".raw.wav"
+    if VOICE == "tom": _raw_tom(text, raw)
+    elif VOICE == "chatterbox": _raw_chatterbox(text, raw)
+    else: _raw_kokoro(text, raw, speed, sid)
+    tempo = float(os.environ.get("LAQLTURE_TEMPO", "1.0"))
     subprocess.run(["ffmpeg", "-y", "-v", "error", "-i", raw, "-af",
-                    "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,aresample=44100",
+                    "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,"
+                    + (f"atempo={tempo}," if tempo != 1.0 else "") + "aresample=44100",
                     "-ac", "1", path], check=True)
     os.remove(raw)
     return round(duration(path), 3)

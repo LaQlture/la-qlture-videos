@@ -5,7 +5,7 @@ Sortie : videos/AAAA-MM-JJ_type.mp4 + planche de vérification dans /tmp/laqltur
 """
 import json, multiprocessing as mp, os, subprocess, sys, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from common import encode, assemble, duration, FPS
+from common import encode, assemble, duration, FPS, tts_close
 
 MIN_DUR = 62.0   # monétisation TikTok : plus d'1 minute
 OBJ = None
@@ -27,7 +27,7 @@ def main(src):
     else:
         raise SystemExit("type inconnu : " + c["type"])
     t = time.time()
-    OBJ.voices()
+    OBJ.voices(); tts_close()
     tl = OBJ.timeline(); total = sum(d for _, d in tl)
     print(f"voix OK ({time.time()-t:.0f}s) — durée prévue {total:.1f}s", flush=True)
     if total < MIN_DUR:
