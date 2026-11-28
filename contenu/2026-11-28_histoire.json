@@ -7,67 +7,145 @@
  "segments": [
   {
    "texte": "Tu savais que la statue de la Liberté n'a pas toujours été verte ?",
-   "carte": "Elle n'était PAS verte"
+   "carte": "Elle n'était PAS verte",
+   "image": "images/2026-11-28/00_statue_verte.jpg",
+   "credit": "Image : Wikimedia Commons"
   },
   {
    "texte": "D'abord, elle est française ! Un cadeau de la France pour les cent ans de l'indépendance américaine.",
-   "carte": "Made in France"
+   "carte": "Made in France",
+   "image": "images/2026-11-28/01_cadeau_france.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.12,
+    0.07,
+    0.88,
+    0.8
+   ]
   },
   {
    "texte": "Le sculpteur Auguste Bartholdi la fabrique à Paris, en plaques de cuivre.",
-   "carte": "Bartholdi"
+   "carte": "Bartholdi",
+   "image": "images/2026-11-28/02_atelier_cuivre.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.02,
+    0.03,
+    0.98,
+    0.97
+   ]
   },
   {
    "texte": "Ces plaques font à peine 2,4 millimètres d'épaisseur. À peu près deux pièces de monnaie !",
    "tts": "Ces plaques font à peine deux virgule quatre millimètres d'épaisseur. À peu près deux pièces de monnaie !",
-   "carte": "2,4 mm"
+   "carte": "2,4 mm",
+   "image": "images/2026-11-28/03_tete_paris_1878.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.06,
+    0.05,
+    0.94,
+    0.95
+   ]
   },
   {
    "texte": "Et à l'intérieur, sa charpente de fer est signée… Gustave Eiffel. Oui, celui de la tour !",
-   "carte": "Gustave Eiffel"
+   "carte": "Gustave Eiffel",
+   "image": "images/2026-11-28/04_structure_eiffel.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.03,
+    0.02,
+    0.97,
+    0.98
+   ]
   },
   {
    "texte": "Entre 1881 et 1884, elle est montée entièrement à Paris, puis démontée pour le voyage.",
-   "carte": "Montée à Paris"
+   "carte": "Montée à Paris",
+   "image": "images/2026-11-28/05_montage_paris.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.03,
+    0.02,
+    0.97,
+    0.98
+   ]
   },
   {
    "texte": "En 1885, le navire Isère traverse l'Atlantique avec 350 pièces rangées dans 214 caisses.",
    "tts": "En 1885, le navire Isère traverse l'Atlantique avec trois cent cinquante pièces rangées dans deux cent quatorze caisses.",
-   "carte": "214 caisses"
+   "carte": "214 caisses",
+   "image": "images/2026-11-28/06_arrivee_isere.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.08,
+    0.26,
+    0.97,
+    0.93
+   ]
   },
   {
    "texte": "Problème : en Amérique, il manque l'argent pour construire son piédestal.",
-   "carte": "Pas de socle"
+   "carte": "Pas de socle",
+   "image": "images/2026-11-28/07_piedestal.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.18,
+    0.16,
+    0.75,
+    0.75
+   ]
   },
   {
    "texte": "Le patron de presse Joseph Pulitzer lance une collecte. Environ 125 000 personnes donnent, souvent un dollar ou moins.",
    "tts": "Le patron de presse Joseph Pulitzer lance une collecte. Environ cent vingt-cinq mille personnes donnent, souvent un dollar ou moins.",
-   "carte": "125 000 donateurs"
+   "carte": "125 000 donateurs",
+   "image": "images/2026-11-28/08_journal_world.jpg",
+   "credit": "Image : Library of Congress"
   },
   {
    "texte": "Le 28 octobre 1886, elle est enfin inaugurée à New York. Dix ans après le centenaire !",
    "tts": "Le vingt-huit octobre 1886, elle est enfin inaugurée à New York. Dix ans après le centenaire !",
-   "carte": "28 octobre 1886"
+   "carte": "28 octobre 1886",
+   "image": "images/2026-11-28/09_inauguration_moran.jpg",
+   "credit": "Image : Edward Moran, 1886 — Wikimedia Commons"
   },
   {
    "texte": "Et ce jour-là, elle brille d'un brun doré et cuivré… comme une pièce de monnaie neuve.",
-   "carte": "Couleur cuivre"
+   "carte": "Couleur cuivre",
+   "image": "images/2026-11-28/10_couleur_cuivre.jpg",
+   "credit": "Image : Library of Congress",
+   "crop": [
+    0.1,
+    0.09,
+    0.9,
+    0.83
+   ]
   },
   {
    "texte": "Mais avec la pluie et l'air marin, le cuivre s'oxyde. Une couche verte, la patine, la recouvre peu à peu.",
-   "carte": "La patine"
+   "carte": "La patine",
+   "image": "images/2026-11-28/11_patine.jpg",
+   "credit": "Image : Wikimedia Commons"
   },
   {
    "texte": "En 1906, le Congrès américain prévoit même de l'argent pour la repeindre couleur cuivre !",
-   "carte": "1906"
+   "carte": "1906",
+   "image": "images/2026-11-28/12_vers_1905.jpg",
+   "credit": "Image : Wikimedia Commons"
   },
   {
    "texte": "Mais le public crie au sacrilège. Et surtout, cette patine protège le métal de la corrosion. On la garde.",
-   "carte": "Sacrilège !"
+   "carte": "Sacrilège !",
+   "image": "images/2026-11-28/13_visage_vert.jpg",
+   "credit": "Image : Wikimedia Commons"
   },
   {
    "texte": "Vers 1920, elle est entièrement verte. Sa couleur célèbre… c'est du cuivre qui a vieilli ! Tu l'aurais repeinte, toi ?",
-   "carte": "Vive le vert !"
+   "carte": "Vive le vert !",
+   "image": "images/2026-11-28/14_flambeau.jpg",
+   "credit": "Image : Library of Congress"
   }
  ],
  "legende": "La statue de la Liberté était couleur cuivre à son inauguration 🗽 C'est le temps qui l'a rendue verte ! Tu l'aurais repeinte, toi ? #culturegenerale #histoire #statuedelaliberte #newyork #lesavaistu #apprendresurtiktok #fyp"
